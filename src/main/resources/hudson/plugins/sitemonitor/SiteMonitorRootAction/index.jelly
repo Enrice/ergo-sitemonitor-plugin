@@ -14,6 +14,7 @@
       <td class="pane-header">${%URL}</td>
       <td class="pane-header">${%Response Code}</td>
       <td class="pane-header">${%Status}</td>
+      <td class="pane-header">${%Version}</td>
     </tr>
     <tbody>
     <j:forEach var="result" items="${it.results}">
@@ -25,6 +26,7 @@
               <img src="${rootURL}/plugin/sitemonitor/images/${result.status.toString().toLowerCase()}.png"/>
             </div>
           </td>
+          <td class="pane">${result.version}</td>
         </tr>
     </j:forEach>
     </tbody>

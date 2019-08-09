@@ -1,5 +1,7 @@
 package hudson.plugins.sitemonitor.model;
 
+import java.util.Properties;
+
 /**
  * This class keeps the details of a site monitoring result.
  * @author cliffano
@@ -28,6 +30,7 @@ public class Result {
      * exception message when the site monitoring gives an unexpected exception.
      */
     private String mNote;
+    private Properties mProperties;
 
     /**
      * Constructs a {@link Result}.
@@ -35,13 +38,15 @@ public class Result {
      * @param responseCode the response code returned from the site
      * @param status status of the monitored site
      * @param note additional textual information of the result
+     * @param properties holds read response
      */
     public Result(final Site site, final Integer responseCode,
-            final Status status, final String note) {
+            final Status status, final String note, final Properties p) {
         mSite = site;
         mResponseCode = responseCode;
         mStatus = status;
         mNote = note;
+        mProperties = p;
     }
 
     /**
@@ -70,5 +75,12 @@ public class Result {
      */
     public final String getNote() {
         return mNote;
+    }
+
+    /**
+     * @return the version
+     */
+    public final String getVersion() {
+        return mProperties.getProperty("VERSION");
     }
 }

@@ -22,6 +22,7 @@
 package hudson.plugins.sitemonitor;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.HttpURLConnection;
@@ -36,6 +37,7 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.Properties;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -177,6 +179,7 @@ public class SiteMonitorRecorder extends Recorder {
             Integer responseCode = null;
             Status status;
             String note = "";
+            Properties p = new Properties();
             HttpURLConnection connection = null;
             String url = site.getUrl();
             final EnvVars env = build.getEnvironment(listener);
@@ -192,6 +195,10 @@ public class SiteMonitorRecorder extends Recorder {
                 }
                 
                 responseCode = connection.getResponseCode();
+                InputStream is = connection.getInputStream();
+                if (is != null) {
+                    p.load(is);
+                }
 
                 List<Integer> successResponseCodes = descriptor.getSuccessResponseCodes();
                 
@@ -227,7 +234,7 @@ public class SiteMonitorRecorder extends Recorder {
                 hasFailure = true;
             }
 
-            Result result = new Result(site, responseCode, status, note);
+            Result result = new Result(site, responseCode, status, note, p);
             results.add(result);
         }
 

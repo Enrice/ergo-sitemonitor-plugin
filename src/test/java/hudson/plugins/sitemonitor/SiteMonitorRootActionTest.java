@@ -7,6 +7,7 @@ import hudson.plugins.sitemonitor.model.Status;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import junit.framework.TestCase;
 
@@ -17,9 +18,9 @@ public class SiteMonitorRootActionTest extends TestCase {
     public void setUp() {
         List<Result> results = new ArrayList<Result>();
         Result result1 = new Result(Site.builder("http://hudson-ci.org").build(),
-                HttpURLConnection.HTTP_OK, Status.UP, "some note 1");
+                HttpURLConnection.HTTP_OK, Status.UP, "some note 1", new Properties());
         Result result2 = new Result(Site.builder("http://blah").build(),
-                HttpURLConnection.HTTP_BAD_GATEWAY, Status.ERROR, "some note 2");
+                HttpURLConnection.HTTP_BAD_GATEWAY, Status.ERROR, "some note 2", new Properties());
         results.add(result1);
         results.add(result2);
         action = new SiteMonitorRootAction(results);

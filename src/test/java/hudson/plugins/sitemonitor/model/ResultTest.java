@@ -1,6 +1,7 @@
 package hudson.plugins.sitemonitor.model;
 
 import java.net.HttpURLConnection;
+import java.util.Properties;
 
 import junit.framework.TestCase;
 
@@ -10,7 +11,7 @@ public class ResultTest extends TestCase {
 
     public void setUp() {
         result = new Result(Site.builder("http://hudson-ci.org").build(),
-                HttpURLConnection.HTTP_OK, Status.DOWN, "some note");
+                HttpURLConnection.HTTP_OK, Status.DOWN, "some note", new Properties());
     }
 
     public void testGetSiteShoudGiveExpectedValue() {
