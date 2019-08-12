@@ -38,7 +38,7 @@ public class Result {
      * @param responseCode the response code returned from the site
      * @param status status of the monitored site
      * @param note additional textual information of the result
-     * @param properties holds read response
+     * @param p holds read response
      */
     public Result(final Site site, final Integer responseCode,
             final Status status, final String note, final Properties p) {
