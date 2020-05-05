@@ -1,5 +1,5 @@
 <?jelly escape-by-default='true'?>
 <div>
-  SiteMonitor plugin monitors web site up/down status.
+  ERGO SiteMonitor plugin monitors web site up/down status.
   Adds a version column to the site monitor
 </div>

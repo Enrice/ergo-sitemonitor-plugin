@@ -11,10 +11,10 @@
 	</properties>
 
 	<groupId>org.jvnet.hudson.plugins</groupId>
-	<artifactId>sitemonitor</artifactId>
+	<artifactId>ergo-sitemonitor</artifactId>
 	<version>0.6</version>
-	<name>SiteMonitor Plugin</name>
-	<description>Monitors web site up/down status.</description>
+	<name>ERGO SiteMonitor Plugin</name>
+	<description>Monitors web site up/down status. Adds a version column.</description>
 	<url>http://wiki.jenkins-ci.org/display/JENKINS/SiteMonitor+Plugin</url>
 	<packaging>hpi</packaging>
 
@@ -173,9 +173,9 @@
 	</reporting>
 
 	<scm>
-		<connection>scm:git:git://github.com/jenkinsci/sitemonitor-plugin.git</connection>
-		<developerConnection>scm:git:git@github.com:jenkinsci/sitemonitor-plugin.git</developerConnection>
-		<url>https://github.com/jenkinsci/sitemonitor-plugin</url>
+		<connection>scm:git:git://github.com/Enrice/ergo-sitemonitor-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:Enrice/ergo-sitemonitor-plugin.git</developerConnection>
+		<url>https://github.com/Enrice/ergo-sitemonitor-plugin</url>
 	</scm>
 
 	<pluginRepositories>

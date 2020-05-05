@@ -1,4 +1,4 @@
-# SiteMonitor Jenkins Plugin
+# ERGO SiteMonitor Jenkins Plugin
 
 ## Development
 

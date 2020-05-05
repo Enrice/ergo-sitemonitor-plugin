@@ -8,3 +8,4 @@
 release.properties
 
 generate_release.sh
+*.iml
